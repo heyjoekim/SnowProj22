@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE GranuleMetaDataFile SYSTEM "http://ecsinfo.gsfc.nasa.gov/ECSInfo/ecsmetadata/dtds/DPL/ECS/ScienceGranuleMetadata.dtd">
+<GranuleMetaDataFile>
+    <DTDVersion>1.0</DTDVersion>
+    <DataCenterId>NSIDC</DataCenterId>
+    <GranuleURMetaData>
+        <GranuleUR>SC:WUS_UCLA_SR.001:241859263</GranuleUR>
+        <DbID>241859263</DbID>
+        <InsertTime>2022-04-19 16:18:18.756</InsertTime>
+        <LastUpdate>2022-04-19 16:18:18.756</LastUpdate>
+        <CollectionMetaData>
+            <ShortName>WUS_UCLA_SR</ShortName>
+            <VersionID>001</VersionID>
+        </CollectionMetaData>
+        <DataFiles>
+            <DataFileContainer>
+                <DistributedFileName>WUS_UCLA_SR_v01_N47_0W110_0_agg_16_WY2019_20_SWE_SCA_POST.nc</DistributedFileName>
+                <FileSize>161409810</FileSize>
+                <ChecksumType>MD5</ChecksumType>
+                <Checksum>c4923a4c25eb9d6b8ed05d8e3b5da76b</Checksum>
+                <ChecksumOrigin>DPLIngst</ChecksumOrigin>
+            </DataFileContainer>
+        </DataFiles>
+        <ECSDataGranule>
+            <SizeMBECSDataGranule>153.932</SizeMBECSDataGranule>
+            <LocalGranuleID>WUS_UCLA_SR_v01_N47_0W110_0_agg_16_WY2019_20_SWE_SCA_POST.nc</LocalGranuleID>
+            <ProductionDateTime>2022-04-13 11:40:29.000</ProductionDateTime>
+        </ECSDataGranule>
+        <RangeDateTime>
+            <RangeEndingTime>23:59:59.000000</RangeEndingTime>
+            <RangeEndingDate>2020-09-30</RangeEndingDate>
+            <RangeBeginningTime>00:00:00.000000</RangeBeginningTime>
+            <RangeBeginningDate>2019-10-01</RangeBeginningDate>
+        </RangeDateTime>
+        <SpatialDomainContainer>
+            <HorizontalSpatialDomainContainer>
+                <BoundingRectangle>
+                    <WestBoundingCoordinate>-109.998</WestBoundingCoordinate>
+                    <NorthBoundingCoordinate>47.9978</NorthBoundingCoordinate>
+                    <EastBoundingCoordinate>-109.001</EastBoundingCoordinate>
+                    <SouthBoundingCoordinate>47.0023</SouthBoundingCoordinate>
+                </BoundingRectangle>
+            </HorizontalSpatialDomainContainer>
+        </SpatialDomainContainer>
+        <Platform>
+            <PlatformShortName>LANDSAT-8</PlatformShortName>
+            <Instrument>
+                <InstrumentShortName>OLI</InstrumentShortName>
+                <Sensor>
+                    <SensorShortName>OLI</SensorShortName>
+                </Sensor>
+            </Instrument>
+        </Platform>
+        <Platform>
+            <PlatformShortName>LANDSAT-7</PlatformShortName>
+            <Instrument>
+                <InstrumentShortName>ETM+</InstrumentShortName>
+                <Sensor>
+                    <SensorShortName>ETM+</SensorShortName>
+                </Sensor>
+            </Instrument>
+        </Platform>
+        <Platform>
+            <PlatformShortName>LANDSAT-5</PlatformShortName>
+            <Instrument>
+                <InstrumentShortName>TM</InstrumentShortName>
+                <Sensor>
+                    <SensorShortName>TM</SensorShortName>
+                </Sensor>
+            </Instrument>
+        </Platform>
+        <PSAs>
+            <PSA>
+                <PSAName>SIPSMetGenVersion</PSAName>
+                <PSAValue>2.5</PSAValue>
+            </PSA>
+        </PSAs>
+        <BrowseProduct>
+            <BrowseGranuleId>UR:10:DsShESDTUR:UR:15:DsShSciServerUR:15:[NSIDC:DSSDSRV]:23:BR:Browse.001:241859450</BrowseGranuleId>
+        </BrowseProduct>
+    </GranuleURMetaData>
+</GranuleMetaDataFile>
+
+
