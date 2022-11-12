@@ -5,7 +5,7 @@ echo "obtaining Data from NSIDC"
 # make sure script is executable
 chmod +x ./code/nsidc_download.sh
 # execute nsidc download script
-sh ./code/nsidc_download.sh
+sh ./code/nsidc_download.sh $1 $2
 echo "finished"
 
 echo "Running Python Script for Data Processing"
