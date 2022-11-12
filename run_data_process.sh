@@ -2,7 +2,7 @@
 
 # Run script to get data from NSIDC
 echo "obtaining Data from NSIDC"
-./nsidc_download.sh
+./code/nsidc_download.sh
 echo "finished"
 
 echo "Running Python Script for Data Processing"
