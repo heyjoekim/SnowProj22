@@ -2,7 +2,7 @@
 ## 1. Introduction
 ### 1.1 Dependencies
 1. Anaconda
-2. You need to have a NASA Earthdata Login
+2. You need to have a NASA Earthdata Account
 ### 1.2 Running the Code
 To run the code should be easy to do. First, clone the github repo in a terminal or Anaconda Power Shell.
 ```
