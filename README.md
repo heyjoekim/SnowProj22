@@ -4,7 +4,7 @@
 1. Anaconda
 2. You need to have a NASA Earthdata Login
 ### 1.2 Running the Code
-To run the code should be easy to do. First, clone the github repo.
+To run the code should be easy to do. First, clone the github repo in a terminal or Anaconda Power Shell.
 ```
 git clone https://github.com/heyjoekim/SnowProj22
 ```
