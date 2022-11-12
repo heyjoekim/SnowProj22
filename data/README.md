@@ -36,7 +36,19 @@ Dates:
     - 2020-10-01 to 2021-06-01
 
 ### `/snow/snotel`
-This data was downloaded from <>. 
+This data was downloaded from the [Sleeping Woman Snotel site](https://wcc.sc.egov.usda.gov/nwcc/site?sitenum=783). The following file(s) was downloaded using the menus. Refer to the screenshot:
+
+![SNOTEL Downloader](../readme_figs/snotel_downloader.png)
+
+- Select Report Content: "Standard SNOTEL"
+- Select Time Series: "Daily"
+- Select Format: "csv"
+- Skip View Current
+- For Date (under green header), I selected:
+    - Years: 2020
+    - "Water Year"
+    - "All days"
+- Click on "View Historic" to download the csv file
 
 ### `/snow/ucla_swe`
 This directory is left empty. A shell script is provided to download the Western United States UCLA Snow Reanalysis (WUS_UCLA_SR) v1 from the National Snow and Ice Data Center (NSIDC).
