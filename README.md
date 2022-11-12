@@ -16,7 +16,7 @@ After that the code should run without any errors
 ```
 sh run_data_process.sh <uid> <password>
 ```
-The <uid> and <password> are the username and password for NASA Earthdata Login. Delete these and add your username and password to be able to download the files.
+The `<uid>` and `<password>` are the username and password for NASA Earthdata Login. Delete these and add your username and password to be able to download the files.
   
 ## 2. Data and Methods
 ## 3. 
