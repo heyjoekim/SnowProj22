@@ -1,5 +1,5 @@
 # Code README
-This folder holds all the code that will be called by the run_data_process.sh script
+This folder holds all the code that will be called by the run_snowproj.sh script
 ## 1. nsidc_download.sh
 Shell script to download data from the NSIDC WUS_UCLA_SR data.
 
