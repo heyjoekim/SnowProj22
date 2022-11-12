@@ -39,7 +39,7 @@ Dates:
 This data was downloaded from the [Sleeping Woman Snotel site](https://wcc.sc.egov.usda.gov/nwcc/site?sitenum=783). The following file(s) was downloaded using the menus. Refer to the screenshot:
 
 ![SNOTEL Downloader](../readme_figs/snotel_downloader.png)
-
+Options for downloading SNOTEL data:
 - Select Report Content: "Standard SNOTEL"
 - Select Time Series: "Daily"
 - Select Format: "csv"
