@@ -6,8 +6,9 @@ To run the code should be easy to do. First, clone the github repo.
 ```
 git clone https://github.com/heyjoekim/SnowProj22
 ```
-Alternatively, you can download the zipped file. We need to make the script that will run all of the code executable first
+Alternatively, you can download the zipped file. After that, change into the repo saved onto your device. We need to make the script that will run all of the code executable first
 ```
+cd SnowProj22
 chmod +x run_data_process.sh
 ```
 After that the code should run without any errors
