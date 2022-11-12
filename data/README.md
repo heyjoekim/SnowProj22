@@ -13,6 +13,8 @@ This directory contains the Cosmic Ray Neutron Sensor (CRNS) data for 11-22-2020
 ### `/mesonet`
 This directory contains the Montana Mesonet data. This data was downloaded from the link: <>. I downloaded data from 2 stations. A screenshot of the data downloader is provided.
 
+![Mesonet Downloader](/readme_figs/mesonet_downloader.png)
+
 Stations:
 1. Moccasin N ARC
 2. Moiese N
@@ -22,8 +24,8 @@ Variables:
 2. Atmospheric Pressure
 3. Relative Humidity
 
-Time:
-- daily
+Aggregation Interval:
+- Daily
 
 Dates:
 - 
