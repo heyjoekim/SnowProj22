@@ -11,9 +11,9 @@
 This directory contains the Cosmic Ray Neutron Sensor (CRNS) data for 11-22-2020 to 5-2021 at our CARC site in Montana. The .txt file is provided. From Sam Tuttle. This data will eventually be published to the NSIDC.
 
 ### `/mesonet`
-This directory contains the Montana Mesonet data. This data was downloaded from the link: <>. I downloaded data from 2 stations. A screenshot of the data downloader is provided.
+This directory contains the Montana Mesonet data. This data was downloaded from the [Mesonet Downloader](https://shiny.cfc.umt.edu/mesonet-download/). I downloaded data from 2 stations. A screenshot of the data downloader is provided.
 
-![Mesonet Downloader](/readme_figs/mesonet_downloader.png)
+![Mesonet Downloader](../readme_figs/mesonet_downloader.png)
 
 Stations:
 1. Moccasin N ARC
@@ -28,7 +28,12 @@ Aggregation Interval:
 - Daily
 
 Dates:
-- 
+1. Mocassin N 
+    - 2018-10-01 to 2019-06-01
+    - 2019-10-01 to 2020-06-01
+    - 2020-11-21 to 2021-06-02
+2. Moiese N MDA
+    - 2020-10-01 to 2021-06-01
 
 ### `/snow/snotel`
 This data was downloaded from <>. 
