@@ -1,7 +1,8 @@
 # SnowProj22 - Final Project for CEE609 EnvDatSci
 ## 1. Introduction
 ### 1.1 Dependencies
-1. You need to have a NASA Earthdata Login
+1. Anaconda
+2. You need to have a NASA Earthdata Login
 ### 1.2 Running the Code
 To run the code should be easy to do. First, clone the github repo.
 ```
