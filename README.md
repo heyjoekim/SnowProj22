@@ -10,11 +10,11 @@ git clone https://github.com/heyjoekim/SnowProj22
 Alternatively, you can download the zipped file. After that, change into the repo saved onto your device. We need to make the script that will run all of the code executable first
 ```
 cd SnowProj22
-chmod +x run_data_process.sh
+chmod +x run_snowproj.sh
 ```
 After that the code should run without any errors
 ```
-sh run_data_process.sh <uid> <password>
+sh run_snowproj.sh <uid> <password>
 ```
 The `<uid>` and `<password>` are the username and password for NASA Earthdata Login. Delete these and add your username and password to be able to download the files.
   
