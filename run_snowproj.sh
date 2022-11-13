@@ -6,7 +6,7 @@ echo "obtaining Data from NSIDC"
 chmod +x ./code/nsidc_download.sh
 chmod +x ./code/nsidc_download_win.sh
 # execute nsidc download script
-if [$1 -eq "windows"]
+if [ $1="windows" ]
 then
   sh ./code/nsidc_download_win.sh $2 $3
 else
