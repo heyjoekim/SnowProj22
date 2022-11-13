@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # read and get Western US UCLA Snow Reanalysis
-cd ./data/snow/ucla_swe
+cd .\data\snow\ucla_swe\
 echo "Saving files to ./data/snow/ucla_swe"
 # Reanalysis for Moccasin -----------------------------------------------------------------------------------------
 # get WY 2019
@@ -21,4 +21,4 @@ wget --load-cookies mycookies.txt --save-cookies mycookies.txt --keep-session-co
 
 echo "Download Complete"
 echo "Heading back to main project dir"
-cd ../../..
+cd ..\..\..
