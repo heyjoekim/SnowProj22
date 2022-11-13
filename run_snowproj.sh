@@ -8,7 +8,7 @@ chmod +x ./code/nsidc_download_win.sh
 # execute nsidc download script
 if [ $1="windows" ]
 then
-  sh ./code/nsidc_download_win.sh $2 $3
+  sh .\code\nsidc_download_win.sh $2 $3
 else
   sh ./code/nsidc_download.sh $2 $3
 fi
