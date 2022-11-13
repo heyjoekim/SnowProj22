@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Create environment to run my project
+conda env create -f myenv.yml
+conda activate snow
+
 # Run script to get data from NSIDC
 echo "obtaining Data from NSIDC"
 # make sure script is executable
