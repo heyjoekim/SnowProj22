@@ -15,9 +15,9 @@ chmod +x run_snowproj.sh
 ```
 After that the code should run without any errors
 ```
-source run_snowproj.sh <uid> <password>
+source run_snowproj.sh <os> <uid> <password>
 ```
-The `<uid>` and `<password>` are the username and password for NASA Earthdata Login. Delete these and add your username and password to be able to download the files.
+The `<uid>` and `<password>` are the username and password for NASA Earthdata Login. Delete these and add your username and password to be able to download the files. For `<os>`: Enter your os. Important for windows system.
   
 ## 2. Data and Methods
 ## 3. 
