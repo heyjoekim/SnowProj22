@@ -37,8 +37,7 @@ def read_SNOTEL(f):
 
 
 def read_MESONET(f):
-    meso = pd.read_csv('./data/mesonet/MT_Mesonet_WY19_moccasin_daily_data.csv',
-                      parse_dates=['datetime'])
+    meso = pd.read_csv(f, parse_dates=['datetime'])
     # Change columns names for easier typing
     meso.columns = ['station_key',
                     'datetime',
