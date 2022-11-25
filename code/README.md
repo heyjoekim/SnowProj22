@@ -8,6 +8,8 @@ Shell script to download data from the NSIDC WUS_UCLA_SR data. A version for win
 ## 2. Data_Process.py
 Python script for data processing
 
-## 3.
+## 3. model_code_validation
+Code to fitting models to data and some validation.
+
 ## 4.
 ## 5.
