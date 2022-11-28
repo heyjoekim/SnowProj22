@@ -20,4 +20,13 @@ echo "finished"
 
 echo "Running Python Script for Data Processing"
 python ./code/Data_Process.py
-echo "finished"
+echo "Finished"
+
+echo " "
+echo "Running and Training Models"
+python ./code/model_code_validation.py
+echo "Finished"
+
+echo " "
+echo "Generating Figures"
+echo "Finished"
