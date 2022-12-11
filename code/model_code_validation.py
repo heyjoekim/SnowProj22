@@ -62,7 +62,7 @@ def lmPDP(pdp_df, press_test=False):
 # RANDOM FOREST REGRESSIONS -----------------------------------------------------------------
 # import regression dataframe
 crns = pd.read_csv('./data/processed/regression/crns_lm.csv')
-crns_swe = pd.read_csv('./data/processed/swe/crns_swe.csv')
+crns_swe = pd.read_csv('./data/processed/swe/crns_swe.csv', parse_dates=['UTC'])
 
 # get y-response variable, X-features (T, RH, and P)
 features1 = crns[['N_cor [cph]', 'T [degC]', 'RH [%]', 'P [mb]']].copy()
@@ -93,7 +93,7 @@ X_train2, X_test2, y_train2, y_test2 = train_test_split(X2,
                                                         random_state=42)
 
 # fit random forest
-RF2 = RandomForestRegressor(random_state=1)
+RF2 = RandomForestRegressor(random_state=1, n_estimators=1000, oob_score=True)
 RF2.fit(X_train2, y_train2)
 y_pred2 = RF2.predict(X_test2)
 swe2 = calcSWE(y_pred2)
@@ -118,10 +118,10 @@ mod_RF2_H = lmPDP(pdp_RF2_H)
 
 # SWE Comparisons ----------------------------------------------------------------------
 # read weather data
-mda21 = pd.read_csv('./data/processed/meso/mda21.csv')
-moc21 = pd.read_csv('./data/processed/meso/moc21.csv')
+mda21 = pd.read_csv('./data/processed/meso/mda21.csv', parse_dates=['datetime'])
+moc21 = pd.read_csv('./data/processed/meso/moc21.csv', parse_dates=['datetime'])
 # read snotel data
-sntl_swe = pd.read_csv('./data/processed/swe/sntl_sw21.csv')
+sntl_swe = pd.read_csv('./data/processed/swe/sntl_sw21.csv', parse_dates=['Date'])
 
 moc21_features = moc21.drop('datetime', axis=1)
 moc21_features['H [gm3]'] = calcH(moc21_features['Air Temp [degC]'], moc21_features['RH [%]'])
