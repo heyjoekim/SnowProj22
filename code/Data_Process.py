@@ -108,6 +108,9 @@ K = 216.68
 H = (rh/100) * (ew*K)/(temp+273.16)
 f_hum = 1 + (0.0054*H)
 
+#save H (abs pressure)
+crns_dat['H'] = H
+
 # total correction factor
 F_t = f_bar*f_sol*f_hum
 
@@ -134,8 +137,8 @@ lamb = -4.8
 crns_dat['SWE [cm]'] = lamb*np.log((crns_dat['N_cor [cph]']-N_wat)/(N_cal-N_wat))
 # create DataFrame for Regression
 print('Saving data file for regression model to ./data/processed/')
-crns_lm_dat = crns_dat[['N_cor [cph]', ' T7 [C]', ' H7 [%]', ' P4 [mb]']]
-crns_lm_dat.columns = ['N_cor [cph]', 'T [degC]', 'RH [%]', 'P [mb]']
+crns_lm_dat = crns_dat[['N_cor [cph]', ' N1 [cph]', ' T7 [C]', ' H7 [%]', ' P4 [mb]', 'H']]
+crns_lm_dat.columns = ['N_cor [cph]', 'N_raw [cph]', 'T [degC]', 'RH [%]', 'P [mb]', 'H [gm3]']
 crns_lm_dat = crns_lm_dat.dropna(how='any').reset_index(drop=True)
 print('Saved')
 # save df
@@ -145,6 +148,7 @@ crns_lm_dat.to_csv(fpath, index=False)
 # CRNS SWE and N counts
 print('Saving data file for CRNS swe to ./data/processed/')
 crns_swe_df = crns_dat[['UTC', 'N_cor [cph]', 'SWE [cm]']]
+crns_swe_df = crns_swe_df.dropna(how='any').reset_index(drop=True)
 # save df
 fpath = Path('./data/processed/swe/crns_swe.csv')
 fpath.parent.mkdir(parents=True, exist_ok=True)
@@ -220,25 +224,25 @@ CARC_re_21 = CARC_re_21.iloc[52:244]
 # save df
 fpath = Path('./data/processed/swe/re_carc21.csv')
 fpath.parent.mkdir(parents=True, exist_ok=True)
-CARC_re_21.to_csv(fpath, index=False)
+CARC_re_21.to_csv(fpath, index=True)
 
 # all others go from Oct 1 to Jun 1
 CARC_re_19 = CARC_re_19.iloc[0:244]
 # save df
 fpath = Path('./data/processed/swe/re_carc19.csv')
 fpath.parent.mkdir(parents=True, exist_ok=True)
-CARC_re_19.to_csv(fpath, index=False)
+CARC_re_19.to_csv(fpath, index=True)
 
 CARC_re_20 = CARC_re_20.iloc[0:244]
 # save df
 fpath = Path('./data/processed/swe/re_carc20.csv')
 fpath.parent.mkdir(parents=True, exist_ok=True)
-CARC_re_20.to_csv(fpath, index=False)
+CARC_re_20.to_csv(fpath, index=True)
 
 SW_re_21 = SW_re_21.iloc[0:244]
 # save df
 fpath = Path('./data/processed/swe/re_sw21.csv')
 fpath.parent.mkdir(parents=True, exist_ok=True)
-SW_re_21.to_csv(fpath, index=False)
+SW_re_21.to_csv(fpath, index=Trues)
 print('Finished Snow Reanalysis Processing')
 # ----------------------------------------------------------------------------------------
