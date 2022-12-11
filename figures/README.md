@@ -1,4 +1,4 @@
-Figure Captions
+Additional processing was not done. Figure Captions
 
 Figure 1 File: rf_results.png
 Figure 1: (a) Random Forest results shown between "observed" corrected Neutron counts against predicted corrected Neutron Counts for our CRNS sensor at the CARC in counts per hour. The dashed line shows a one to one relationship between the two entities. (b) A similar plot against our "observed" neutron counts with the residuals of the regression results. A dashed line at 0 represents where both predicted and observed values are equal. The residuals clearly have some heteroscedasticity.
