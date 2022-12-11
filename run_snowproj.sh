@@ -29,4 +29,5 @@ echo "Finished"
 
 echo " "
 echo "Generating Figures"
+python ./code/figures.py
 echo "Finished"
