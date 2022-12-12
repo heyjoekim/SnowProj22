@@ -13,7 +13,7 @@ This directory contains the Cosmic Ray Neutron Sensor (CRNS) data for 11-22-2020
 ### `/mesonet`
 This directory contains the Montana Mesonet data. This data was downloaded from the [Mesonet Downloader](https://shiny.cfc.umt.edu/mesonet-download/). I downloaded data from 2 stations. A screenshot of the data downloader is provided.
 
-![Mesonet Downloader](../readme_figs/mesonet_downloader.png)
+![Mesonet Downloader](../figures/readme_figs/mesonet_downloader.png)
 
 Stations:
 1. Moccasin N ARC
@@ -38,7 +38,7 @@ Dates:
 ### `/snow/snotel`
 This data was downloaded from the [Sleeping Woman Snotel site](https://wcc.sc.egov.usda.gov/nwcc/site?sitenum=783). The following file(s) was downloaded using the menus. Refer to the screenshot:
 
-![SNOTEL Downloader](../readme_figs/snotel_downloader.png)
+![SNOTEL Downloader](../figures/readme_figs/snotel_downloader.png)
 Options for downloading SNOTEL data:
 - Select Report Content: "Standard SNOTEL"
 - Select Time Series: "Daily"
