@@ -1,6 +1,6 @@
 # Assessing Cosmic Ray Neutron Sensing Corrections Equations to Location
 ## 1. Introduction
-The amount of water that is stored in snow is an important resource to monitor especially with anthropogenic climate change. In the prairie, snow is heavily affected by winds [5]. We hope that cosmic ray neutron sensing, which has approximate maximum footprints ranges between 200 m to 300 m be able to get important measurements of snow water equivalence, the amount of water stored in snowpack. However, recent examinations have discussed whether the current corrections of raw CRNS data as described by Desilets (2017) [3] are extremely location derived [1,10,14]. From the correction factors, we know that neutron counts are related to moisture in its surrounding. Can we use a regression model to obtain a modelled neutron count given our given the atmospheric conditions (temperature, humidity, and pressure) assuming no changes in soil moisture? How accurate are SWE estimates from these modelled counting rates?
+The amount of water that is stored in snow is an important resource to monitor especially with anthropogenic climate change. In the prairie, snow is heavily affected by winds [5]. We hope that cosmic ray neutron sensing, which has approximate maximum footprints ranges between 200 m to 300 m be able to get important measurements of snow water equivalence, the amount of water stored in snowpack. However, recent examinations have discussed whether the current corrections of raw CRNS data as described by Desilets (2017) [3] are extremely location derived [1, 10, 14]. From the correction factors, we know that neutron counts are related to moisture in its surrounding. Can we use a regression model to obtain a modelled neutron count given our given the atmospheric conditions (temperature, humidity, and pressure) assuming no changes in soil moisture? How accurate are SWE estimates from these modelled counting rates?
 
 ### 1.1 Dependencies
 1. Anaconda
@@ -62,7 +62,7 @@ $$
     f_{hum}=1+0.0054H(t)\tag{5}
 $$
 
-$f_{bar}$ is the correction factor based on barometric pressure. $\beta$ is a pressure coefficient assumed to be 0.0077 hPa $^{-1}$. p(t) is the pressure and $p_0$ is a reference pressure usually some average pressure for the site. $f_{sol}$ corrects for solar activity and is based off of the Jungfraujoch neutron monitor. This correction factor will not be varied in this analysis. Finally, $f_{hum}$ is the correction for humidity, which was derived from data and simulations by \citet{rosolem_effect_2013}. H(t) can be calculated with the equation
+$f_{bar}$ is the correction factor based on barometric pressure. $\beta$ is a pressure coefficient assumed to be 0.0077 hPa $^{-1}$. p(t) is the pressure and $p_0$ is a reference pressure usually some average pressure for the site. $f_{sol}$ corrects for solar activity and is based off of the Jungfraujoch neutron monitor. This correction factor will not be varied in this analysis. Finally, $f_{hum}$ is the correction for humidity, which was derived from data and simulations by Rosolem et al. (2013) [9]. H(t) can be calculated with the equation
 
 $$
     H(t) = \frac{U}{100}(\frac{e_wk}{T+273.13})\tag{6}
