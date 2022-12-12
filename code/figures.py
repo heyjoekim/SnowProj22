@@ -46,8 +46,8 @@ plt.show()
 
 # PDP Plots
 # read in URANOS model results
-mod_h = pd.read_csv('./data/processed/models/modeled_h.csv')
-mod_p = pd.read_csv('./data/processed/models/modeled_p.csv')
+mod_h = pd.read_csv('./data/analysis/models/modeled_h.csv')
+mod_p = pd.read_csv('./data/analysis/models/modeled_p.csv')
 # Figure 2: PDP plot with pressure -------------------------------------------------------------
 ps = np.arange(860,885)
 ps = sm.add_constant(ps)
@@ -111,7 +111,7 @@ plt.show()
 
 # Results -----------------------------------------------------------------------------------
 crns_swe.set_index('UTC', inplace=True)
-re_swe = pd.read_csv('./data/processed/swe/re_carc21.csv', parse_dates=['dates'])
+re_swe = pd.read_csv('./data/analysis/swe/re_carc21.csv', parse_dates=['dates'])
 
 fig, ax = plt.subplots(2,1, sharex=True)
 crns_daily_avg = crns_swe.resample('D').mean()
@@ -134,7 +134,7 @@ plt.show()
 # --------------------------------------------------------------------------------
 
 # Results -----------------------------------------------------------------------------------
-re_swe = pd.read_csv('./data/processed/swe/re_sw21.csv', parse_dates=['dates'])
+re_swe = pd.read_csv('./data/analysis/swe/re_sw21.csv', parse_dates=['dates'])
 
 fig, ax = plt.subplots(2,1, sharex=True)
 mda21.plot(x='datetime', y='N (RF2)', ax=ax[0], label='RF')
