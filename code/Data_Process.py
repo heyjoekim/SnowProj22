@@ -76,7 +76,7 @@ def read_Reanalysis(f, dates, target_lat, target_lon):
 # 1: CRNS Processing ------------------------------------------------------------
 print('Starting Processing on CRNS data')
 # Read in CRNS data
-crns_dat = pd.read_csv('./data/crns/CRNS_CARC_MT_20210601.txt',
+crns_dat = pd.read_csv('./data/raw_data/crns/CRNS_CARC_MT_20210601.txt',
        header=1,
        parse_dates=[0,14])
 
@@ -163,9 +163,9 @@ print('Finished CRNS Processing')
 # MESONET Processing -----------------------------------------------------------
 print('Starting Processing on Mesonet Data')
 # Read in Mesonet for Mocassin for WY 2019, 2020, and 2021
-moc19 = read_MESONET('./data/mesonet/MT_Mesonet_WY19_moccasin_daily_data.csv')
-moc20 = read_MESONET('./data/mesonet/MT_Mesonet_WY20_moccasin_daily_data.csv')
-moc21 = read_MESONET('./data/mesonet/MT_Mesonet_WY21_moccasin_daily_data.csv')
+moc19 = read_MESONET('./data/raw_data/mesonet/MT_Mesonet_WY19_moccasin_daily_data.csv')
+moc20 = read_MESONET('./data/raw_data/mesonet/MT_Mesonet_WY20_moccasin_daily_data.csv')
+moc21 = read_MESONET('./data/raw_data/mesonet/MT_Mesonet_WY21_moccasin_daily_data.csv')
 
 # save df
 fpath = Path('./data/processed/meso/moc19.csv')
@@ -209,13 +209,13 @@ dates_wy19 = pd.date_range(start='2018-10-01', end='2019-09-30')
 dates_wy20 = pd.date_range(start='2019-10-01', end='2020-09-30')
 dates_wy21 = pd.date_range(start='2020-10-01', end='2021-09-30')
 
-f = './data/snow/ucla_swe/WUS_UCLA_SR_v01_N47_0W110_0_agg_16_WY2018_19_SWE_SCA_POST.nc'
+f = './data/raw_data/snow/ucla_swe/WUS_UCLA_SR_v01_N47_0W110_0_agg_16_WY2018_19_SWE_SCA_POST.nc'
 CARC_re_19 = read_Reanalysis(f, dates_wy19, CARC_lat, CARC_lon)
-f = './data/snow/ucla_swe/WUS_UCLA_SR_v01_N47_0W110_0_agg_16_WY2019_20_SWE_SCA_POST.nc'
+f = './data/raw_data/snow/ucla_swe/WUS_UCLA_SR_v01_N47_0W110_0_agg_16_WY2019_20_SWE_SCA_POST.nc'
 CARC_re_20 = read_Reanalysis(f, dates_wy20, CARC_lat, CARC_lon)
-f = './data/snow/ucla_swe/WUS_UCLA_SR_v01_N47_0W110_0_agg_16_WY2020_21_SWE_SCA_POST.nc'
+f = './data/raw_data/snow/ucla_swe/WUS_UCLA_SR_v01_N47_0W110_0_agg_16_WY2020_21_SWE_SCA_POST.nc'
 CARC_re_21 = read_Reanalysis(f, dates_wy21, CARC_lat, CARC_lon)
-f = './data/snow/ucla_swe/WUS_UCLA_SR_v01_N47_0W115_0_agg_16_WY2020_21_SWE_SCA_POST.nc'
+f = './data/raw_data/snow/ucla_swe/WUS_UCLA_SR_v01_N47_0W115_0_agg_16_WY2020_21_SWE_SCA_POST.nc'
 SW_re_21 = read_Reanalysis(f, dates_wy21, sw_sntl_lat, sw_sntl_lon)
 
 # correct date ranges
