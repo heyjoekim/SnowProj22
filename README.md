@@ -136,7 +136,7 @@ Finally, these counting rates would be used to calculate SWE values which will b
 3. Desilets, D. (2017). Calibrating A Non-Invasive Cosmic Ray Soil Moisture For Snow Water Equivalent. https://doi.org/10.5281/ZENODO.439105
 4. Fang, Y., Y. L. and Margulis., S. A. (2022). Western united states ucla daily snow reanalysis,
 version 1
-4. Gray, D. M. (n.d.). SNOW HYDROLOGY OF THE PRAIRIE ENVIRONMENT. 13.
+4. Gray, D. M. (1970). Snow hydrology of the prairie environment. Snow hydrology, 21-34.
 5. Köhli, M., Schrön, M., Zacharias, S., & Schmidt, U. (2022). URANOS v1.0 – the Ultra Rapid Adaptable Neutron-Only Simulation for Environmental Research [Preprint]. Climate and Earth system modeling. https://doi.org/10.5194/gmd-2022-93
 6. Molnar, C., Freiesleben, T., König, G., Casalicchio, G., Wright, M. N., & Bischl, B. (2021). Relating the Partial Dependence Plot and Permutation Feature Importance to the Data Generating Process (arXiv:2109.01433). arXiv. http://arxiv.org/abs/2109.01433
 7. Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel, O., Blondel,
