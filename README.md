@@ -113,7 +113,7 @@ Both regression model would be trained on the processed CRNS data. The corrected
 Finally, these counting rates would be used to calculate SWE values which will be compared to either both SNOTEL data and the UCLA reanalysis data or just the reanalysis data to check magnitude and correlations.
 ## 3 Results
 ![regression results](/figures/rf_results.png)
-
+*Figure 1. (a) Random Forest results shown between "observed" corrected Neutron counts against predicted corrected Neutron Counts for our CRNS sensor at the CARC in counts per hour. The dashed line shows a one to one relationship between the two entities. (b) A similar plot against our "observed" neutron counts with the residuals of the regression results. A dashed line at 0 represents where both predicted and observed values are equal. The residuals clearly have some heteroscedasticity.*
 ## 4. Discussion
 
 ## 5. Conclusion
