@@ -134,11 +134,26 @@ Finally, these counting rates would be used to calculate SWE values which will b
 1. Andreasen, M., Jensen, K. H., Zreda, M., Desilets, D., Bogena, H., & Looms, M. C. (2016). Modeling cosmic ray neutron field measurements: MODELING COSMIC RAY NEUTRON FIELD MEASUREMENTS. Water Resources Research, 52(8), 6451–6471. https://doi.org/10.1002/2015WR018236
 2. Breiman, L. (2001). Random forests. Machine Learning, 45(1), 5–32. https://doi.org/10.1023/A:1010933404324
 3. Desilets, D. (2017). Calibrating A Non-Invasive Cosmic Ray Soil Moisture For Snow Water Equivalent. https://doi.org/10.5281/ZENODO.439105
+4. Fang, Y., Y. L. and Margulis., S. A. (2022). Western united states ucla daily snow reanalysis,
+version 1
 4. Gray, D. M. (n.d.). SNOW HYDROLOGY OF THE PRAIRIE ENVIRONMENT. 13.
 5. Köhli, M., Schrön, M., Zacharias, S., & Schmidt, U. (2022). URANOS v1.0 – the Ultra Rapid Adaptable Neutron-Only Simulation for Environmental Research [Preprint]. Climate and Earth system modeling. https://doi.org/10.5194/gmd-2022-93
 6. Molnar, C., Freiesleben, T., König, G., Casalicchio, G., Wright, M. N., & Bischl, B. (2021). Relating the Partial Dependence Plot and Permutation Feature Importance to the Data Generating Process (arXiv:2109.01433). arXiv. http://arxiv.org/abs/2109.01433
+7. Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel, O., Blondel,
+M., Prettenhofer, P., Weiss, R., Dubourg, V., Vanderplas, J., Passos, A., Cournapeau,
+D., Brucher, M., Perrot, M., and Duchesnay, E. (2011). Scikit-learn: Machine learning in
+Python. Journal of Machine Learning Research, 12:2825–2830.
 7. Rosolem, R., Shuttleworth, W. J., Zreda, M., Franz, T. E., Zeng, X., & Kurc, S. A. (2013). The Effect of Atmospheric Water Vapor on Neutron Count in the Cosmic-Ray Soil Moisture Observing System. Journal of Hydrometeorology, 14(5), 1659–1671. https://doi.org/10.1175/JHM-D-12-0120.1
 8. Schattan, P., Köhli, M., Schrön, M., Baroni, G., & Oswald, S. E. (2019). Sensing Area‐Average Snow Water Equivalent with Cosmic‐Ray Neutrons: The Influence of Fractional Snow Cover. Water Resources Research, 55(12), 10796–10812. https://doi.org/10.1029/2019WR025647
+9. Seabold, S. and Perktold, J. (2010). statsmodels: Econometric and statistical modeling with
+python. In 9th Python in Science Conference.
 9. Serreze, M. C., Clark, M. P., Armstrong, R. L., McGinnis, D. A., & Pulwarty, R. S. (1999). Characteristics of the western United States snowpack from snowpack telemetry (SNOTEL) data. Water Resources Research, 35(7), 2145–2160. https://doi.org/10.1029/1999WR900090
+10. Virtanen, P., Gommers, R., Oliphant, T. E., Haberland, M., Reddy, T., Cournapeau, D.,
+Burovski, E., Peterson, P., Weckesser, W., Bright, J., van der Walt, S. J., Brett, M.,
+Wilson, J., Millman, K. J., Mayorov, N., Nelson, A. R. J., Jones, E., Kern, R., Larson,
+E., Carey, C. J., Polat,  ̇I., Feng, Y., Moore, E. W., VanderPlas, J., Laxalde, D., Perktold,
+J., Cimrman, R., Henriksen, I., Quintero, E. A., Harris, C. R., Archibald, A. M., Ribeiro,
+A. H., Pedregosa, F., van Mulbregt, P., and SciPy 1.0 Contributors (2020). SciPy 1.0:
+Fundamental Algorithms for Scientific Computing in Python. Nature Methods, 17:261–272.
 10. Wallbank, J. R., Cole, S. J., Moore, R. J., Anderson, S. R., & Mellor, E. J. (2021). Estimating snow water equivalent using cosmic‐ray neutron sensors from the COSMOS‐UK network. Hydrological Processes, 35(5). https://doi.org/10/gq5kxc
 11. Zreda, M., Shuttleworth, W. J., Zeng, X., Zweck, C., Desilets, D., Franz, T., & Rosolem, R. (2012). COSMOS: The COsmic-ray Soil Moisture Observing System. Hydrology and Earth System Sciences, 16(11), 4079–4099. https://doi.org/10.5194/hess-16-4079-2012
