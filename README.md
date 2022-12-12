@@ -41,53 +41,53 @@ SNOTEL daily measurements will also be quality controlled for missing and errone
 The main calculations for CRNS processing and SWE calculations are done based on \citet{desilets_calibrating_2017} which is summarized in this section. The raw neutron counting rate from the sensor first needs to be corrected from other moisture sources such as the atmosphere:
 
 $$
-    N=N_{raw}F(t)
+    N=N_{raw}F(t) \tag{1}
 $$
 
 $F(t)$ is the correction factor which is then decomposed into the following components
 
 $$
-    F(t)=f_{bar}f_{sol}f_{hum}
+    F(t)=f_{bar}f_{sol}f_{hum} \tag{2}
 $$
 
 $$
-    f_{bar}=\exp[\beta(p(t)-p_0)]
+    f_{bar}=\exp[\beta(p(t)-p_0)]\tag{3}
 $$
 
 $$
-    f_{sol}=\frac{M_0}{M(t)}
+    f_{sol}=\frac{M_0}{M(t)}\tag{4}
 $$
 
 $$
-    f_{hum}=1+0.0054H(t)
+    f_{hum}=1+0.0054H(t)\tag{5}
 $$
 
 $f_{bar}$ is the correction factor based on barometric pressure. $\beta$ is a pressure coefficient assumed to be 0.0077 hPa $^{-1}$. p(t) is the pressure and $p_0$ is a reference pressure usually some average pressure for the site. $f_{sol}$ corrects for solar activity and is based off of the Jungfraujoch neutron monitor. This correction factor will not be varied in this analysis. Finally, $f_{hum}$ is the correction for humidity, which was derived from data and simulations by \citet{rosolem_effect_2013}. H(t) can be calculated with the equation
 
 $$
-    H(t) = \frac{U}{100}(\frac{e_wk}{T+273.13})
+    H(t) = \frac{U}{100}(\frac{e_wk}{T+273.13})\tag{6}
 $$
 
 $U$ is relative humidity expressed as a percentage and $k$ is a constant equal to 216.68 $g k J^{-1}$. $e_w$ is the saturation vapor pressure calculated by
 
 $$
-    e_w = 6.112 \exp(\frac{17.62T}{243.12+T})
+    e_w = 6.112 \exp(\frac{17.62T}{243.12+T})\tag{7}
 $$
 
 for temperature T in $^{\circ}C$ . The final equations that are also needed are
 
 $$
-    N_{wat}=0.24N_0
+    N_{wat}=0.24N_0\tag{8}
 $$
 
 $$
-    N_0 = \frac{F(t)N_\theta}{\frac{a_0}{\theta_g\rho_{bd}+a_2}+a_1}
+    N_0 = \frac{F(t)N_\theta}{\frac{a_0}{\theta_g\rho_{bd}+a_2}+a_1}\tag{9}
 $$
 
 where $a_0$, $a_1$, and $a_2$ are all derived from simulations. Using all of these corrections, we can invert equations and derive an expression for the SWE. The SWE function is
 
 $$
-    SWE = -\Lambda\ln(\frac{N-N_{wat}}{N_\theta-N_{wat}})
+    SWE = -\Lambda\ln(\frac{N-N_{wat}}{N_\theta-N_{wat}})\tag{10}
 $$
 
 where $\Lambda$ is an attenuation length and $N_{wat}$ is the counting rate over deep water, $N_\theta$ is the zero-snow counting rate, and N is the counting rate.
@@ -105,7 +105,7 @@ Table 1: Variable Inflation Factors for each feature in the regression DataFrame
 
 I will specifically run random forest models using both pressure in mb/hPa and absolute humidity in $g/m^{-3}$ (Equation 6) combining temperature and relative humidity from our weather data. Using H will give us an easier linear relationship to analyze with the partial dependence plots. 
 
-From the approximations of the partial dependence plots, I will approximate the $\beta$ from the pressure correction equation (Equation 3) as well as relationships between relative humidity and temperature. For the second regression, I will estimate both $\beta$ and the slope (0.0054) from Equation 5, to see if our trained random forest regression is estimating these values. These linear regressions will be performed using the statsmodel package for python \citep{seabold2010statsmodels}.
+From the approximations of the partial dependence plots, I will approximate the $\beta$ from the pressure correction equation (Equation 3) as well as relationships between relative humidity and temperature. For the second regression, I will estimate both y-intercept (= 1) and the slope (0.0054) from Equation 5, to see if our trained random forest regression is estimating these values. These linear regressions will be performed using the statsmodel package for python \citep{seabold2010statsmodels}.
 
 ### 2.2.4 Training/Validation
 Both regression model would be trained on the processed CRNS data. The corrected neutron counting rate N will be predicted using pressure (mb) and absolute humidity (). The full hourly CRNS data will be used to train the regression model. The training and testing split of the data will be done using the scikit-learn Python package and its built-in function train\_test\_split. The training/testing split will be done on 7:3 ratio. For the ridge regression, the data will be normalized before fitting, also using scikit-learn's standardization functions. Comparisons of model fit will be made using $R^2$, root mean squared error, and the Pearson correlation metric. Both $R^2$ and root mean squared error is built into scikit-learn package through the metrics module. The Pearson correlation will be used from the Python package scipy \citep{2020SciPy-NMeth}. The counting rates will also be compared after going through the corrections described in \citet{desilets_calibrating_2017} as well as the modelled counting rates.
