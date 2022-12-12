@@ -3,7 +3,7 @@ Additional processing was not done. Figure Captions
 ![alt text](rf_results.png)
 Figure 1: (a) Random Forest results shown between "observed" corrected Neutron counts against predicted corrected Neutron Counts for our CRNS sensor at the CARC in counts per hour. The dashed line shows a one to one relationship between the two entities. (b) A similar plot against our "observed" neutron counts with the residuals of the regression results. A dashed line at 0 represents where both predicted and observed values are equal. The residuals clearly have some heteroscedasticity.
 
-![alt text](pdp_press.png)
+![alt text](my_figs_original/pdp_press.png)
 
 Figure 2. A partial dependence plot (PDP) between pressure [mb] against Corrected Neutron counts (blue dots). The black dashed line is a linear fit for pressure as the independent variable and the log Neutron Count as the depdendent variable. Modeled results from URANOS are plotted along side our regression PDP with changing pressures at a constant humidity, soil moisture, and soil porosity. The red line is a linear fit for modeled results and shows a slight difference between the RF regression and simple modeled results.
 
