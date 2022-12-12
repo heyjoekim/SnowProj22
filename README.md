@@ -39,22 +39,29 @@ CRNS measurements of neutron counts below 2000 counts per hour was removed from 
 SNOTEL daily measurements will also be quality controlled for missing and erroneous data following procedures from \citet{serreze_characteristics_1999}. Erroneous data is designated as any change in measurements that is greater than at least 5 standard deviations greater than the monthly mean. Missing data will also be flagged. Common quality control for SNOTEL stations typically involve negative measurements for SWE and snow depth. Unless precipitation is involved, most data will be filled with a value of 0 for these negative measurements. However, if significant
 ### 2.2.2 CRNS Processing and SWE Calculations
 The main calculations for CRNS processing and SWE calculations are done based on \citet{desilets_calibrating_2017} which is summarized in this section. The raw neutron counting rate from the sensor first needs to be corrected from other moisture sources such as the atmosphere:
+
 $$
     N=N_{raw}F(t)
 $$
+
 $F(t)$ is the correction factor which is then decomposed into the following components
+
 $$
     F(t)=f_{bar}f_{sol}f_{hum}
 $$
+
 $$
     f_{bar}=\exp[\beta(p(t)-p_0)]
 $$
+
 $$
     f_{sol}=\frac{M_0}{M(t)}
 $$
+
 $$
     f_{hum}=1+0.0054H(t)
 $$
+
 $f_{bar}$ is the correction factor based on barometric pressure. $\beta$ is a pressure coefficient assumed to be 0.0077 hPa $^{-1}$. p(t) is the pressure and $p_0$ is a reference pressure usually some average pressure for the site. $f_{sol}$ corrects for solar activity and is based off of the Jungfraujoch neutron monitor. This correction factor will not be varied in this analysis. Finally, $f_{hum}$ is the correction for humidity, which was derived from data and simulations by \citet{rosolem_effect_2013}. H(t) can be calculated with the equation
 $$
     H(t) = \frac{U}{100}(\frac{e_wk}{T+273.13})
