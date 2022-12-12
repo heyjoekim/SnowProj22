@@ -21,4 +21,4 @@ wget --http-user=$1 --http-password=$2 --load-cookies ~/.urs_cookies --save-cook
 
 echo "Download Complete"
 echo "Heading back to main project dir"
-cd ../../..
+cd ../../../..
