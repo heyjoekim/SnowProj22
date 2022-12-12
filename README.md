@@ -111,6 +111,5 @@ From the approximations of the partial dependence plots, I will approximate the 
 Both regression model would be trained on the processed CRNS data. The corrected neutron counting rate N will be predicted using pressure (mb) and absolute humidity (). The full hourly CRNS data will be used to train the regression model. The training and testing split of the data will be done using the scikit-learn Python package and its built-in function train\_test\_split. The training/testing split will be done on 7:3 ratio. For the ridge regression, the data will be normalized before fitting, also using scikit-learn's standardization functions. Comparisons of model fit will be made using $R^2$, root mean squared error, and the Pearson correlation metric. Both $R^2$ and root mean squared error is built into scikit-learn package through the metrics module. The Pearson correlation will be used from the Python package scipy \citep{2020SciPy-NMeth}. The counting rates will also be compared after going through the corrections described in \citet{desilets_calibrating_2017} as well as the modelled counting rates.
 
 Finally, these counting rates would be used to calculate SWE values which will be compared to either both SNOTEL data and the UCLA reanalysis data or just the reanalysis data to check magnitude and correlations.
-## 3
- Results
+## 3 Results
 ## 4.
