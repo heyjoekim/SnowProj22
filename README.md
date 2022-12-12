@@ -1,4 +1,4 @@
-# SnowProj22 - Final Project for CEE609 EnvDatSci
+# Assessing Cosmic Ray Neutron Sensing Corrections Equations to Location
 ## 1. Introduction
 The amount of water that is stored in snow is an important resource to monitor especially with anthropogenic climate change. In the prairie, snow is heavily affected by winds \citep{pomeroy_prairie_1993}. We hope that cosmic ray neutron sensing, which has approximate maximum footprints ranges between 200 m to 300 m be able to get important measurements of snow water equivalence, the amount of water stored in snowpack. However, recent examinations have discussed whether the current corrections of raw CRNS data as described by \citet{desilets_calibrating_2017} are extremely location derived \citep{schattan_sensing_2019, andreasen_cosmic_2020, wallbank_estimating_2021}. From the correction factors, we know that neutron counts are related to moisture in its surrounding. Can we use a regression model to obtain a modelled neutron count given our given the atmospheric conditions (temperature, humidity, and pressure) assuming no changes in soil moisture? How accurate are SWE estimates from these modelled counting rates?
 
@@ -31,7 +31,7 @@ To compare and test the location effect of the correction formulas for CRNS data
 
 To double check the magnitude of SWE, I will also use the Western United States UCLA Daily Snow Reanalyis, Version 1 dataset \citep{ucla_snow}. This data is freely available from the National Snow and Ice Data Center (NSIDC). A bash script is provided to download the currently available data. This dataset is created from a series of Landsat images that are uniquely blended in order to obtain posterior estimates of snow depth, SWE, and fractional snow cover. This analysis will only look at the SWE potion of the data. A time series of SWE at the approximate pixel location of both sites will be taken for water year 2021.
 
-### 2.2 Data Processing
+### 2.2 Data Processing and Model
 This section will outline the major data processing that must be done on the CRNS measurements.
 #### 2.2.1 Quality Control
 CRNS measurements of neutron counts below 2000 counts per hour was removed from the dataset. CRNS measured temperature and humidity must also be quality controlled for erroneous measurements and missing data. For CRNS measured temperatures, any values below -60 was considered to be missing data and was removed from the data. Additionally, any relative humidity values that were above 100 was also removed from the data. Similar quality controls will also be done on Montana Mesonet data if needed. 
