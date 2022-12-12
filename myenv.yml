@@ -9,3 +9,6 @@ dependencies:
 - netcdf4=1.5.7
 - pathlib=1.0.1
 - matplotlib=3.5.2
+- scikit-learn=1.1.1
+- seaborn=0.11.2
+- statsmodel=0.13.2
