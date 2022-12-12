@@ -112,7 +112,12 @@ Both regression model would be trained on the processed CRNS data. The corrected
 
 Finally, these counting rates would be used to calculate SWE values which will be compared to either both SNOTEL data and the UCLA reanalysis data or just the reanalysis data to check magnitude and correlations.
 ## 3 Results
-## 4.
+![regression results](/figures/rf_results.png)
+
+## 4. Discussion
+
+## 5. Conclusion
+
 ## References
 1. 
 2. 
