@@ -168,21 +168,21 @@ moc20 = read_MESONET('./data/raw_data/mesonet/MT_Mesonet_WY20_moccasin_daily_dat
 moc21 = read_MESONET('./data/raw_data/mesonet/MT_Mesonet_WY21_moccasin_daily_data.csv')
 
 # save df
-fpath = Path('./data/processed/meso/moc19.csv')
+fpath = Path('./data/analysis/meso/moc19.csv')
 fpath.parent.mkdir(parents=True, exist_ok=True)
 moc19.to_csv(fpath, index=False)
 # save df
-fpath = Path('./data/processed/meso/moc20.csv')
+fpath = Path('./data/analysis/meso/moc20.csv')
 fpath.parent.mkdir(parents=True, exist_ok=True)
 moc20.to_csv(fpath, index=False)
 # save df
-fpath = Path('./data/processed/meso/moc21.csv')
+fpath = Path('./data/analysis/meso/moc21.csv')
 fpath.parent.mkdir(parents=True, exist_ok=True)
 moc21.to_csv(fpath, index=False)
 
 
 # Read in Mesonet for Mocassin for WY 2021
-mda21 = read_MESONET('./data/mesonet/MT_Mesonet_WY21_mdamoies_daily_data.csv')
+mda21 = read_MESONET('./data/raw_data/mesonet/MT_Mesonet_WY21_mdamoies_daily_data.csv')
 # save df
 fpath = Path('./data/processed/meso/mda21.csv')
 fpath.parent.mkdir(parents=True, exist_ok=True)
@@ -192,12 +192,12 @@ print('Finished Mesonet Processing')
 
 # SNOTEL Processing -------------------------------------------------------------
 print('Starting Processing on SNOTEL Data')
-f='./data/snow/snotel/783_STAND_WATERYEAR=2021.csv'
+f='./data/raw_data/snow/snotel/783_STAND_WATERYEAR=2021.csv'
 sw21 = read_SNOTEL(f)
 # f='./data/snow/snotel/783_STAND_WATERYEAR=2022.csv'
 # sw22 = read_SNOTEL(f)
 # save df
-fpath = Path('./data/processed/swe/sntl_sw21.csv')
+fpath = Path('./data/analysis/swe/sntl_sw21.csv')
 fpath.parent.mkdir(parents=True, exist_ok=True)
 sw21.to_csv(fpath, index=False)
 print('Finished SNOTEL Processing')
@@ -222,26 +222,26 @@ SW_re_21 = read_Reanalysis(f, dates_wy21, sw_sntl_lat, sw_sntl_lon)
 # WY2021 CARC lines up with CRNS dates
 CARC_re_21 = CARC_re_21.iloc[52:244]
 # save df
-fpath = Path('./data/processed/swe/re_carc21.csv')
+fpath = Path('./data/analysis/swe/re_carc21.csv')
 fpath.parent.mkdir(parents=True, exist_ok=True)
 CARC_re_21.to_csv(fpath, index=True)
 
 # all others go from Oct 1 to Jun 1
 CARC_re_19 = CARC_re_19.iloc[0:244]
 # save df
-fpath = Path('./data/processed/swe/re_carc19.csv')
+fpath = Path('./data/analysis/swe/re_carc19.csv')
 fpath.parent.mkdir(parents=True, exist_ok=True)
 CARC_re_19.to_csv(fpath, index=True)
 
 CARC_re_20 = CARC_re_20.iloc[0:244]
 # save df
-fpath = Path('./data/processed/swe/re_carc20.csv')
+fpath = Path('./data/analysis/swe/re_carc20.csv')
 fpath.parent.mkdir(parents=True, exist_ok=True)
 CARC_re_20.to_csv(fpath, index=True)
 
 SW_re_21 = SW_re_21.iloc[0:244]
 # save df
-fpath = Path('./data/processed/swe/re_sw21.csv')
+fpath = Path('./data/analysis/swe/re_sw21.csv')
 fpath.parent.mkdir(parents=True, exist_ok=True)
 SW_re_21.to_csv(fpath, index=Trues)
 print('Finished Snow Reanalysis Processing')
