@@ -33,11 +33,11 @@ To double check the magnitude of SWE, I will also use the Western United States 
 
 ### 2.2 Data Processing
 This section will outline the major data processing that must be done on the CRNS measurements.
-### 2.2.1 Quality Control
+#### 2.2.1 Quality Control
 CRNS measurements of neutron counts below 2000 counts per hour was removed from the dataset. CRNS measured temperature and humidity must also be quality controlled for erroneous measurements and missing data. For CRNS measured temperatures, any values below -60 was considered to be missing data and was removed from the data. Additionally, any relative humidity values that were above 100 was also removed from the data. Similar quality controls will also be done on Montana Mesonet data if needed. 
 
 SNOTEL daily measurements will also be quality controlled for missing and erroneous data following procedures from \citet{serreze_characteristics_1999}. Erroneous data is designated as any change in measurements that is greater than at least 5 standard deviations greater than the monthly mean. Missing data will also be flagged. Common quality control for SNOTEL stations typically involve negative measurements for SWE and snow depth. Unless precipitation is involved, most data will be filled with a value of 0 for these negative measurements. However, if significant
-### 2.2.2 CRNS Processing and SWE Calculations
+#### 2.2.2 CRNS Processing and SWE Calculations
 The main calculations for CRNS processing and SWE calculations are done based on \citet{desilets_calibrating_2017} which is summarized in this section. The raw neutron counting rate from the sensor first needs to be corrected from other moisture sources such as the atmosphere:
 
 $$
@@ -92,7 +92,7 @@ $$
 
 where $\Lambda$ is an attenuation length and $N_{wat}$ is the counting rate over deep water, $N_\theta$ is the zero-snow counting rate, and N is the counting rate.
 
-### 2.2.3 Models
+#### 2.2.3 Models
 In order to check if the equations from \citet{desilets_calibrating_2017} work for our site in Montana, I will first use a random forest regression to my CRNS data. Random forests are an ensemble model by creating multiple decision trees with more randomness \citep{breiman2001random}. In order to estimate the coefficients, I will use partial dependence plots. Introduced by \citet{molnar_relating_2021}, partial dependence plots allows us to interpret model relationships within a model, especially with machine learning models that do no take explicit assumptions. Additionally, another issue that needs to be brought up in multicolinearity. I calculated the VIF for my features for my random forest regression. While slightly colinear with our variables (VIF<10), pressure is highly colinear with our corrected neutron counts with the VIF being at least an order of magnitude greater than 10. While feature selection is not a major part of this analysis, using highly colinear variables may influence the results of our regression. 
 
 Table 1: Variable Inflation Factors for each feature in the regression DataFrame. VIFs greater than 10 is set to have too much multicolinearity.
