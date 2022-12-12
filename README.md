@@ -103,7 +103,7 @@ Table 1: Variable Inflation Factors for each feature in the regression DataFrame
 |H [$gm^3$] |	9.71 |
 
 
-I will specifically run random forest models using both pressure in mb/hPa and absolute humidity in $g/m^{-3}$ (Equation 6) combining temperature and relative humidity from our weather data. Using H will give us an easier linear relationship to analyze with the partial dependence plots. 
+I will specifically run random forest models using both pressure in mb/hPa and absolute humidity in $g/m^{-3}$ (Equation 6) combining temperature and relative humidity from our weather data. Using H will give us an easier linear relationship to analyze with the partial dependence plots (PDP). Additionally, to obtain a rough approximation between the relationship of neutron counts hitting the detector and our two atmospheric variables, I will compare the partial dependence plots with modeled neutron counts. The modeled neutron counts will be from the Ultra-Rapid Neutron Only Simulation (URANOS), a Monte Carlo simulation developed specifically for CRNS purposes. The Monte Carlo code can generate millions of neutrons with some randomly sampled initial conditions, while tracking their paths and interactions. URANOS also allows us to model geometries using layers to replicate important site characteristics[2]. Two sets of URANOS models runs were done: 1 set under equal pressure and variable humidity, and another set at equal humidity but variable pressures. Both runs also kept soil moisture and soil porosity constant at 12.5\% and 50\% respectively. Each model run also calculated the path and interactions of 1 million neutrons. Only the epithermal neutron counts are shown in this analysis to compare against our measurements and PDP.
 
 From the approximations of the partial dependence plots, I will approximate the $\beta$ from the pressure correction equation (Equation 3) as well as relationships between relative humidity and temperature. For the second regression, I will estimate both y-intercept (= 1) and the slope (0.0054) from Equation 5, to see if our trained random forest regression is estimating these values. These linear regressions will be performed using the statsmodel package for python \citep{seabold2010statsmodels}.
 
@@ -113,3 +113,6 @@ Both regression model would be trained on the processed CRNS data. The corrected
 Finally, these counting rates would be used to calculate SWE values which will be compared to either both SNOTEL data and the UCLA reanalysis data or just the reanalysis data to check magnitude and correlations.
 ## 3 Results
 ## 4.
+## References
+1. 
+2. 
