@@ -93,17 +93,17 @@ $$
 where $\Lambda$ is an attenuation length and $N_{wat}$ is the counting rate over deep water, $N_\theta$ is the zero-snow counting rate, and N is the counting rate.
 
 ### 2.2.3 Models
-In order to check if the equations from \citet{desilets_calibrating_2017} work for our site in Montana, I will first use a random forest regression to my CRNS data. Random forests are an ensemble model by creating multiple decision trees with more randomness \citep{breiman2001random}. In order to estimate the coefficients, I will use partial dependence plots. Introduced by \citet{molnar_relating_2021}, partial dependence plots allows us to interpret model relationships within a model, especially with machine learning models that do no take explicit assumptions.
+In order to check if the equations from \citet{desilets_calibrating_2017} work for our site in Montana, I will first use a random forest regression to my CRNS data. Random forests are an ensemble model by creating multiple decision trees with more randomness \citep{breiman2001random}. In order to estimate the coefficients, I will use partial dependence plots. Introduced by \citet{molnar_relating_2021}, partial dependence plots allows us to interpret model relationships within a model, especially with machine learning models that do no take explicit assumptions. Additionally, another issue that needs to be brought up in multicolinearity. I calculated the VIF for my features for my random forest regression. While slightly colinear with our variables (VIF<10), pressure is highly colinear with our corrected neutron counts with the VIF being at least an order of magnitude greater than 10. While feature selection is not a major part of this analysis, using highly colinear variables may influence the results of our regression. 
 
 Table 1: Variable Inflation Factors for each feature in the regression DataFrame. VIFs greater than 10 is set to have too much multicolinearity.
-|**feature**| **VIF**|
+|**Feature**| **VIF**|
 |-----------|--------|
 |N_cor [cph]|723.05  |
 |P [mb]     |676.81  |
-|H [$gm^3$]    |	9.71 |
+|H [$gm^3$] |	9.71 |
 
 
-I will specifically run two random forest models. The first random forest regression will predict the corrected neutron counts with pressure (in mb), temperatures (in deg C), and relative humidity (in \%). The second random forest regression model will use the absolute humidity in $g/m^{-3}$ (Equation 6) combining temperature and relative humidity. Using H will give us an easier linear relationship to analyze with the partial dependence plots. 
+I will specifically run random forest models using both pressure in mb/hPa and absolute humidity in $g/m^{-3}$ (Equation 6) combining temperature and relative humidity from our weather data. Using H will give us an easier linear relationship to analyze with the partial dependence plots. 
 
 From the approximations of the partial dependence plots, I will approximate the $\beta$ from the pressure correction equation (Equation 3) as well as relationships between relative humidity and temperature. For the second regression, I will estimate both $\beta$ and the slope (0.0054) from Equation 5, to see if our trained random forest regression is estimating these values. These linear regressions will be performed using the statsmodel package for python \citep{seabold2010statsmodels}.
 
