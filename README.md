@@ -118,17 +118,25 @@ The results from the random forest regression is shown on Figure 1 using our tes
 ![regression results](/figures/my_figs_original/rf_results.png)
 *Figure 1. (a) Random Forest results shown between "observed" corrected Neutron counts against predicted corrected Neutron Counts for our CRNS sensor at the CARC in counts per hour. The dashed line shows a one to one relationship between the two entities. (b) A similar plot against our "observed" neutron counts with the residuals of the regression results. A dashed line at 0 represents where both predicted and observed values are equal. The residuals clearly have some heteroscedasticity.*
 
-Analyzing the partial dependence plots, we see that from modeled relationships, an increase in pressure leads to an increase in neutron counts.
+Analyzing the partial dependence plots for pressure, we see that from modeled relationships, an increase in pressure leads to an increase in neutron counts. In order to estimate the pressure correction equations, we took linear regressions using the logarithm of the corrected neutron counts. We can estimate the linear equation to obtain a general equation form of 
+
+$$
+y = 3951.8exp(0.000239p(t))\tag{}
+$$
+
+We can then divide the theoretical mean of the raw neutron count to esimate the $\beta$ and $p_0$. Taking another linear equation, we estimate $\beta$ to equal 0.00239 and the $p_0$ to equal -1.98e-10. The equation from Desilets (2017) had $\beta$ equal to 0.0077 and $p_0$ should equal to an average pressure value across the time we were taking measurements. 
 
 ![Pressure PDP](/figures/my_figs_original/pdp_press.png)
 
 *Figure 2. A partial dependence plot (PDP) between pressure [mb] against Corrected Neutron counts (blue dots). The black dashed line is a linear fit for pressure as the independent variable and the log Neutron Count as the depdendent variable. Modeled results from URANOS are plotted along side our regression PDP with changing pressures at a constant humidity, soil moisture, and soil porosity. The red line is a linear fit for modeled results and shows a slight difference between the RF regression and simple modeled results.*
 
-In analyzing the PDP results for absolute humidity, we notice one big discrepancy. From URANOS results, we see the predicted result that neutron counts should decrease with increasing humidity as is noted in the literature [3,9]. However, in our data, we notice the opposite trend. When we take a linear regression of the PDP plot, we obtain the following linear equation:
+In analyzing the PDP results for absolute humidity (Figure 3), we notice one big discrepancy. From URANOS results, we see the predicted result that neutron counts should decrease with increasing humidity as is noted in the literature [3,9]. However, in our data, we notice the opposite trend. When we take a linear regression of the PDP plot, we obtain the following linear equation:
 
 $$
  F_{hum} = 1.0 + 0.0073H(t) \tag{} 
 $$
+
+These results are slightly different from the values from Desilets (2017), whose slope was equal to 0.0054. 
 
 ![Abs. Humidity PDP](/figures/my_figs_original/pdp_humid.png)
 
@@ -139,9 +147,8 @@ $$
 
 ![SW SWE](/figures/my_figs_original/sw_swe_results.png)
 *Figure 5: a) Corrected neutron counts for the Sleeping Woman SNOTEL site using RF regression (blue) using the Moise MD Mesonet station data. No CRNS data is available for this site b) SWE calculations using the Desilets (2017) equations for neutron counts based on Desilet (2017) for Random Forest correction (orange). SNOTEL measurements (blue) and the Western United States UCLA Snow Reanalysis Data (green) are also shown. At this site, the RF corrections does not work well.*  
-## 4. Discussion
+## 4. Discussion and Conclusions
 
-## 5. Conclusion
 
 ## References
 1. Andreasen, M., Jensen, K. H., Zreda, M., Desilets, D., Bogena, H., & Looms, M. C. (2016). Modeling cosmic ray neutron field measurements: MODELING COSMIC RAY NEUTRON FIELD MEASUREMENTS. *Water Resources Research*, 52(8), 6451–6471. https://doi.org/10.1002/2015WR018236
