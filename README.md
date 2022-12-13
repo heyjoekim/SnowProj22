@@ -121,7 +121,7 @@ The results from the random forest regression is shown on Figure 1 using our tes
 Analyzing the partial dependence plots for pressure, we see that from modeled relationships, an increase in pressure leads to an increase in neutron counts. In order to estimate the pressure correction equations, we took linear regressions using the logarithm of the corrected neutron counts. We can estimate the linear equation to obtain a general equation form of 
 
 $$
-y = 3951.8exp(0.000239p(t))\tag{}
+y = 3951.8exp(0.000239p(t))\tag{11}
 $$
 
 We can then divide the theoretical mean of the raw neutron count to esimate the $\beta$ and $p_0$. Taking another linear equation, we estimate $\beta$ to equal 0.00239 and the $p_0$ to equal -1.98e-10. The equation from Desilets (2017) had $\beta$ equal to 0.0077 and $p_0$ should equal to an average pressure value across the time we were taking measurements. 
@@ -133,7 +133,7 @@ We can then divide the theoretical mean of the raw neutron count to esimate the 
 In analyzing the PDP results for absolute humidity (Figure 3), we notice one big discrepancy. From URANOS results, we see the predicted result that neutron counts should decrease with increasing humidity as is noted in the literature [3,9]. However, in our data, we notice the opposite trend. When we take a linear regression of the PDP plot, we obtain the following linear equation:
 
 $$
- F_{hum} = 1.0 + 0.0073H(t) \tag{} 
+ F_{hum} = 1.0 + 0.0073H(t) \tag{12} 
 $$
 
 These results are slightly different from the values from Desilets (2017), whose slope was equal to 0.0054. 
@@ -142,10 +142,16 @@ These results are slightly different from the values from Desilets (2017), whose
 
 *Figure 3. A partial dependence plot (PDP) between absolute humidity [g/m^3] against Corrected Neutron counts (blue dots). The black line is a linear fit for absolutre pressure as the independent variable and the Neutron Count as the depdendent variable. Modeled results from URANOS are plotted along side our regression PDP with changing humidity at a constant pressure, soil moisture, and soil porosity. The red dashed line is the linear equation for modeled humidity and neutron counts.*
 
+We can then use our equations to try and back out a new predicted neutron counts and eventually SWE. Figure 4 shows the results of comparing using the random forest regression to predict neturon counts and SWE against using Desilet's (2017) equations. We notice a big error in neutron counts towards the middle/end of December 2020. We are able to recreate the large spike of snowfall in middle February 2021, but not able to maintain the correct shape and trend after this time. Comparing our SWE calculations to the UCLA Snow Reanalysis, we see similar trends across all three calculations. The UCLA Reanalysis SWE tended to overrepresent the snow spike in mid-February. However, across all other time periods, we see less snow in this dataset, most likely from the large areal averages. 
+
 ![CARC SWE](/figures/my_figs_original/carc_swe_results.png)
+
 *Figure 4: a) Corrected neutron counts for our CARC site using the Desilets (2017) equation (blue) and the RF regression (orange) for the Moccasin Mesonet station data. b) SWE calculations using the Desilets (2017) equations for neutron counts based on Desilet (2017) corrections (blue), Random Forest correction (orange). The Western United States UCLA Snow Reanalysis Data is also plotted as an additional data source (green).*
 
+When we try to apply our regression to another site in Montana (Figure 5), our random forest model does not accurately predict SWE. Because there isn't a CRNS measurement at this site, we cannot predict neutron counts or SWE. There is considerably more snow at this location compared to our CARC site. Even the UCLA Snow Reanalysis data under predicts snow at this location. Again, since the SNOTEL site is only a single measurements, this is likely due to an areal averaging. 
+
 ![SW SWE](/figures/my_figs_original/sw_swe_results.png)
+
 *Figure 5: a) Corrected neutron counts for the Sleeping Woman SNOTEL site using RF regression (blue) using the Moise MD Mesonet station data. No CRNS data is available for this site b) SWE calculations using the Desilets (2017) equations for neutron counts based on Desilet (2017) for Random Forest correction (orange). SNOTEL measurements (blue) and the Western United States UCLA Snow Reanalysis Data (green) are also shown. At this site, the RF corrections does not work well.*  
 ## 4. Discussion and Conclusions
 
