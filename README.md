@@ -125,6 +125,7 @@ Analyzing the partial dependence plots, we see that from modeled relationships, 
 *Figure 2. A partial dependence plot (PDP) between pressure [mb] against Corrected Neutron counts (blue dots). The black dashed line is a linear fit for pressure as the independent variable and the log Neutron Count as the depdendent variable. Modeled results from URANOS are plotted along side our regression PDP with changing pressures at a constant humidity, soil moisture, and soil porosity. The red line is a linear fit for modeled results and shows a slight difference between the RF regression and simple modeled results.*
 
 In analyzing the PDP results for absolute humidity, we notice one big discrepancy. From URANOS results, we see the predicted result that neutron counts should decrease with increasing humidity as is noted in the literature [3,9]. However, in our data, we notice the opposite trend. When we take a linear regression of the PDP plot, we obtain the following linear equation:
+
 $$
  F_{hum} = 1.0 + 0.0073H(t) \tag{} 
 $$
