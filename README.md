@@ -6,7 +6,7 @@ The amount of water that is stored in snow is an important resource to monitor e
 1. Anaconda
 2. You need to have a NASA Earthdata Account
 ### 1.2 Running the Code
-To run the code should be easy to do. First, clone the github repo in a terminal or Anaconda Power Shell.
+Before running the code, please have your username and password ready for a NASA Earthdata Account. One of the datasets required for this analysis downloads data from the NSIDC. Then, you may clone this github repo in a terminal or Anaconda Power Shell.
 ```
 git clone https://github.com/heyjoekim/SnowProj22
 ```
@@ -15,7 +15,7 @@ Alternatively, you can download the zipped file. After that, change into the rep
 cd SnowProj22
 chmod +x run_snowproj.sh
 ```
-After that the code should run without any errors
+After that the code should run without any errors. The following script will create a new conda environment called `snow` which will use all the versions of the python packages that this analysis used. It will also complete all of the analysis.
 ```
 source run_snowproj.sh <os> <uid> <password>
 ```
