@@ -154,7 +154,11 @@ When we try to apply our regression to another site in Montana (Figure 5), our r
 
 *Figure 5: a) Corrected neutron counts for the Sleeping Woman SNOTEL site using RF regression (blue) using the Moise MD Mesonet station data. No CRNS data is available for this site b) SWE calculations using the Desilets (2017) equations for neutron counts based on Desilet (2017) for Random Forest correction (orange). SNOTEL measurements (blue) and the Western United States UCLA Snow Reanalysis Data (green) are also shown. At this site, the RF corrections does not work well.*  
 ## 4. Discussion and Conclusions
+Figures 4 and 5 clearly show that we need more CRNS measurements to train a general model like a random forest regression to model neutron counts at various sites. We should expect neutron interactiosn to be heavily moderated with increased snow amounts as per the literature [6,15]. At the Sleeping Woman site, SWE exceeded the maximums of 1 to 1.5 cm of SWE that we observed at the CARC.
 
+The PDP results here also show that there is a factor to location when we are using the correction equations for CRNS. Our equations from the PDP differed greatly from the equations provided by Desilets (2017) for correcting the effects of pressure and humidity. More research needs to be investigated with modeled results for humidity
+
+As mentioned on Table 1, multicolinearity is clearly an issue within this analysis. Pressure and neutron counts were highly colinear in this anaylsis, possibly creating errors when we used the linear regressions in our PDP plots. We hope that more data collection from our CRNS this winter may help. Additionally, I would like to use CRNS measurements for other locations i.e. the COSMOS-UK, COSMOS-EU, and other CRNS data across the United States. 
 
 ## References
 1. Andreasen, M., Jensen, K. H., Zreda, M., Desilets, D., Bogena, H., & Looms, M. C. (2016). Modeling cosmic ray neutron field measurements: MODELING COSMIC RAY NEUTRON FIELD MEASUREMENTS. *Water Resources Research*, 52(8), 6451–6471. https://doi.org/10.1002/2015WR018236
