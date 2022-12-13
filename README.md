@@ -100,7 +100,7 @@ Table 1: Variable Inflation Factors for each feature in the regression DataFrame
 |-----------|--------|
 |N_cor [cph]|723.05  |
 |P [mb]     |676.81  |
-|H [$ g/m^3 $] |	9.71 |
+|H $[g/m^3]$ |	9.71 |
 
 
 I will specifically run random forest models using both pressure in mb/hPa and absolute humidity in $g/m^{-3}$ (Equation 6) combining temperature and relative humidity from our weather data. Using H will give us an easier linear relationship to analyze with the partial dependence plots (PDP). Additionally, to obtain a rough approximation between the relationship of neutron counts hitting the detector and our two atmospheric variables, I will compare the partial dependence plots with modeled neutron counts. The modeled neutron counts will be from the Ultra-Rapid Neutron Only Simulation (URANOS), a Monte Carlo simulation developed specifically for CRNS purposes. The Monte Carlo code can generate millions of neutrons with some randomly sampled initial conditions, while tracking their paths and interactions. URANOS also allows us to model geometries using layers to replicate important site characteristics[6]. Two sets of URANOS models runs were done: 1 set under equal pressure and variable humidity, and another set at equal humidity but variable pressures. Both runs also kept soil moisture and soil porosity constant at 12.5\% and 50\% respectively. Each model run also calculated the path and interactions of 1 million neutrons. Only the epithermal neutron counts are shown in this analysis to compare against our measurements and PDP.
