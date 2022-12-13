@@ -108,19 +108,29 @@ I will specifically run random forest models using both pressure in mb/hPa and a
 From the approximations of the partial dependence plots, I will approximate the $\beta$ from the pressure correction equation (Equation 3) as well as relationships between relative humidity and temperature. For the second regression, I will estimate both y-intercept (= 1) and the slope (0.0054) from Equation 5, to see if our trained random forest regression is estimating these values. These linear regressions will be performed using the statsmodel package for python [11].
 
 #### 2.2.4 Training/Validation
-Both regression model would be trained on the processed CRNS data. The corrected neutron counting rate N will be predicted using pressure (mb) and absolute humidity $(g/m^3)$. The full hourly CRNS data will be used to train the regression model. The training and testing split of the data will be done using the scikit-learn Python package and its built-in function train\_test\_split. The training/testing split will be done on 7:3 ratio. For the ridge regression, the data will be normalized before fitting, also using scikit-learn's standardization functions. Comparisons of model fit will be made using $R^2$, root mean squared error, and the Pearson correlation metric. Both $R^2$ and root mean squared error is built into scikit-learn package through the metrics module. The Pearson correlation will be used from the Python package scipy [13]. The counting rates will also be compared after going through the corrections described in Desilet (2017) as well as the modelled counting rates.
+The regression model would be trained on the processed CRNS data. The corrected neutron counting rate N will be predicted using pressure (mb) and absolute humidity $(g/m^3)$. The full hourly CRNS data will be used to train the regression model. The training and testing split of the data will be done using the scikit-learn Python package and its built-in function train\_test\_split. The training/testing split will be done on 7:3 ratio. Model fit results will be evaluated using $R^2$, root mean squared error, out-of-bag (OOB) error, and the Pearson correlation metric. Both $R^2$ and root mean squared error is built into scikit-learn package through the metrics module. The OOB errors is also from scikit-learn and represents the prediction performance by evaluatuing the scores of data not chosen in the sampling process. The Pearson correlation will be used from the Python package scipy [13]. The counting rates will also be compared after going through the corrections described in Desilet (2017) as well as the modelled counting rates.
 
 Finally, these counting rates would be used to calculate SWE values which will be compared to either both SNOTEL data and the UCLA reanalysis data or just the reanalysis data to check magnitude and correlations.
 
 ## 3 Results
-The results from the random forest regression is shown on Figure 1 using our test dataset. It is evident from the residuals (Figure 1B) that there is significant heteroscedasticity in our random forest model. We also observe that our out-of-bag (OOB) score is only 0.245 and the $R^2$ is 0.269. 
+The results from the random forest regression is shown on Figure 1 using our test dataset. It is evident from the residuals (Figure 1B) that there is significant heteroscedasticity in our random forest model. We also observe that our out-of-bag (OOB) score is only 0.245 and the $R^2$ is 0.269. The root mean square errors (RMSE) is also approximately 159 cph and both the predicted (random forest results) and our observed (corrected raw counts) are correlated to approximately 0.539 using a Pearson's Correlation metric.
+
 ![regression results](/figures/my_figs_original/rf_results.png)
 *Figure 1. (a) Random Forest results shown between "observed" corrected Neutron counts against predicted corrected Neutron Counts for our CRNS sensor at the CARC in counts per hour. The dashed line shows a one to one relationship between the two entities. (b) A similar plot against our "observed" neutron counts with the residuals of the regression results. A dashed line at 0 represents where both predicted and observed values are equal. The residuals clearly have some heteroscedasticity.*
 
+Analyzing the partial dependence plots, we see that from modeled relationships, an increase in pressure leads to an increase in neutron counts.
+
 ![Pressure PDP](/figures/my_figs_original/pdp_press.png)
+
 *Figure 2. A partial dependence plot (PDP) between pressure [mb] against Corrected Neutron counts (blue dots). The black dashed line is a linear fit for pressure as the independent variable and the log Neutron Count as the depdendent variable. Modeled results from URANOS are plotted along side our regression PDP with changing pressures at a constant humidity, soil moisture, and soil porosity. The red line is a linear fit for modeled results and shows a slight difference between the RF regression and simple modeled results.*
 
+In analyzing the PDP results for absolute humidity, we notice one big discrepancy. From URANOS results, we see the predicted result that neutron counts should decrease with increasing humidity as is noted in the literature [3,9]. However, in our data, we notice the opposite trend. When we take a linear regression of the PDP plot, we obtain the following linear equation:
+$$
+ F_{hum} = 1.0 + 0.0073H(t) \tag{} 
+$$
+
 ![Abs. Humidity PDP](/figures/my_figs_original/pdp_humid.png)
+
 *Figure 3. A partial dependence plot (PDP) between absolute humidity [g/m^3] against Corrected Neutron counts (blue dots). The black line is a linear fit for absolutre pressure as the independent variable and the Neutron Count as the depdendent variable. Modeled results from URANOS are plotted along side our regression PDP with changing humidity at a constant pressure, soil moisture, and soil porosity. The red dashed line is the linear equation for modeled humidity and neutron counts.*
 
 ![CARC SWE](/figures/my_figs_original/carc_swe_results.png)
