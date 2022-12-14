@@ -64,22 +64,22 @@ def lmPDP(pdp_df, press_test=False):
 crns = pd.read_csv('./data/analysis/regression/crns_lm.csv')
 crns_swe = pd.read_csv('./data/analysis/swe/crns_swe.csv', parse_dates=['UTC'])
 
-# get y-response variable, X-features (T, RH, and P)
-features1 = crns[['N_cor [cph]', 'T [degC]', 'RH [%]', 'P [mb]']].copy()
-y1 = features1['N_cor [cph]']
-X1 = features1.drop('N_cor [cph]', axis=1)
+# # get y-response variable, X-features (T, RH, and P)
+# features1 = crns[['N_cor [cph]', 'T [degC]', 'RH [%]', 'P [mb]']].copy()
+# y1 = features1['N_cor [cph]']
+# X1 = features1.drop('N_cor [cph]', axis=1)
 
-# do a test/train split of 3:7
-X_train1, X_test1, y_train1, y_test1 = train_test_split(X1, y1, test_size=0.3, random_state=42)
+# # do a test/train split of 3:7
+# X_train1, X_test1, y_train1, y_test1 = train_test_split(X1, y1, test_size=0.3, random_state=42)
 
-# fit randomforest
-RF1 = RandomForestRegressor(random_state=1)
-# fit with training data
-RF1.fit(X_train1, y_train1)
-# predict with testing data
-y_pred1 = RF1.predict(X_test1)
-# calc swe
-swe1 = calcSWE(y_pred1)
+# # fit randomforest
+# RF1 = RandomForestRegressor(random_state=1)
+# # fit with training data
+# RF1.fit(X_train1, y_train1)
+# # predict with testing data
+# y_pred1 = RF1.predict(X_test1)
+# # calc swe
+# swe1 = calcSWE(y_pred1)
 
 # create second features with P and H (abs. pressure)
 features2 = crns[['N_cor [cph]', 'P [mb]', 'H [gm3]']]
@@ -97,19 +97,34 @@ RF2 = RandomForestRegressor(random_state=1, n_estimators=1000, oob_score=True)
 RF2.fit(X_train2, y_train2)
 y_pred2 = RF2.predict(X_test2)
 swe2 = calcSWE(y_pred2)
+
+rf_results = pd.DataFrame({'test':y_test2, 'predicted':y_pred2})
+
+fpath = Path('./data/model_outputs/rf_test_results.csv')
+fpath.parent.mkdir(parents=True, exist_ok=True)
+rf_results.to_csv(fpath)
+
+tests = ['RMSE','OOB', 'Pearson R']
+rmse = np.sqrt(mean_squared_error(y_test2, y_pred2))
+oob = RF2.oob_score_
+r, p = stats.pearsonr(y_test2, y_pred2)
+rf_scores = pd.DataFrame({'Tests':tests, 'Values':[rmse, oob, r]})
+fpath = Path('./data/model_outputs/rf_test_scores.csv')
+fpath.parent.mkdir(parents=True, exist_ok=True)
+rf_scores.to_csv(fpath)
 # ---------------------------------------------------------------------------------------
 
 # PARTIAL DEPENDENCE ----------------------------------------------------------------
-pdp_RF1_T = PDPwrapper(RF1, X_train1, 0)
-pdp_RF1_RH = PDPwrapper(RF1, X_train1, 1)
-pdp_RF1_P = PDPwrapper(RF1, X_train1, 2)
+# pdp_RF1_T = PDPwrapper(RF1, X_train1, 0)
+# pdp_RF1_RH = PDPwrapper(RF1, X_train1, 1)
+# pdp_RF1_P = PDPwrapper(RF1, X_train1, 2)
 pdp_RF2_P = PDPwrapper(RF2, X_train2, 0)
 pdp_RF2_H = PDPwrapper(RF2, X_train2, 1)
 
 # fit models
-mod_RF1_T = lmPDP(pdp_RF1_T)
-mod_RF1_RH = lmPDP(pdp_RF1_RH)
-mod_RF1_P = lmPDP(pdp_RF1_P, press_test=True)
+# mod_RF1_T = lmPDP(pdp_RF1_T)
+# mod_RF1_RH = lmPDP(pdp_RF1_RH)
+# mod_RF1_P = lmPDP(pdp_RF1_P, press_test=True)
 mod_RF2_P = lmPDP(pdp_RF2_P, press_test=True)
 mod_RF2_H = lmPDP(pdp_RF2_H)
 
@@ -128,14 +143,14 @@ moc21_features['H [gm3]'] = calcH(moc21_features['Air Temp [degC]'], moc21_featu
 moc21_features2 = moc21_features.drop(['Air Temp [degC]', 'RH [%]'], axis=1)
 moc21_features = moc21_features.drop('H [gm3]', axis=1)
 
-moc21_features.columns = X_test1.columns
+# moc21_features.columns = X_test1.columns
 moc21_features2.columns = X_test2.columns
-N1 = RF1.predict(moc21_features)
+# N1 = RF1.predict(moc21_features)
 N2 = RF2.predict(moc21_features2)
 
-moc21['N (RF1)'] = N1
+# moc21['N (RF1)'] = N1
 moc21['N (RF2)'] = N2
-moc21['SWE (RF1)'] = calcSWE(N1)
+# moc21['SWE (RF1)'] = calcSWE(N1)
 moc21['SWE (RF2)'] = calcSWE(N2)
 
 mda21_features = mda21.drop('datetime', axis=1)
@@ -145,10 +160,18 @@ mda21_features = mda21_features.drop('H [gm3]', axis=1)
 
 mda21_features.columns = X_test1.columns
 mda21_features2.columns = X_test2.columns
-N1 = RF1.predict(mda21_features)
+# N1 = RF1.predict(mda21_features)
 N2 = RF2.predict(mda21_features2)
 
-mda21['N (RF1)'] = N1
+# mda21['N (RF1)'] = N1
 mda21['N (RF2)'] = N2
-mda21['SWE (RF1)'] = calcSWE(N1)
+# mda21['SWE (RF1)'] = calcSWE(N1)
 mda21['SWE (RF2)'] = calcSWE(N2)
+
+fpath = Path('./data/model_outputs/moc21.csv')
+fpath.parent.mkdir(parents=True, exist_ok=True)
+moc21.to_csv(fpath)
+
+fpath = Path('./data/model_outputs/rf_test_results.csv')
+fpath.parent.mkdir(parents=True, exist_ok=True)
+mda21.to_csv(fpath)
