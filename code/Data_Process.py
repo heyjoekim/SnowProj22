@@ -142,7 +142,7 @@ crns_lm_dat.columns = ['N_cor [cph]', 'N_raw [cph]', 'T [degC]', 'RH [%]', 'P [m
 crns_lm_dat = crns_lm_dat.dropna(how='any').reset_index(drop=True)
 print('Saved')
 # save df
-fpath = Path('./data/processed/regression/crns_lm.csv')
+fpath = Path('./data/analysis/regression/crns_lm.csv')
 fpath.parent.mkdir(parents=True, exist_ok=True)
 crns_lm_dat.to_csv(fpath, index=False)
 # CRNS SWE and N counts
@@ -150,7 +150,7 @@ print('Saving data file for CRNS swe to ./data/processed/')
 crns_swe_df = crns_dat[['UTC', 'N_cor [cph]', 'SWE [cm]']]
 crns_swe_df = crns_swe_df.dropna(how='any').reset_index(drop=True)
 # save df
-fpath = Path('./data/processed/swe/crns_swe.csv')
+fpath = Path('./data/analysis/swe/crns_swe.csv')
 fpath.parent.mkdir(parents=True, exist_ok=True)
 crns_swe_df.to_csv(fpath, index=False)
 print('Saved')
@@ -184,7 +184,7 @@ moc21.to_csv(fpath, index=False)
 # Read in Mesonet for Mocassin for WY 2021
 mda21 = read_MESONET('./data/raw_data/mesonet/MT_Mesonet_WY21_mdamoies_daily_data.csv')
 # save df
-fpath = Path('./data/processed/meso/mda21.csv')
+fpath = Path('./data/analysis/meso/mda21.csv')
 fpath.parent.mkdir(parents=True, exist_ok=True)
 mda21.to_csv(fpath, index=False)
 print('Finished Mesonet Processing')
