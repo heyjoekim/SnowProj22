@@ -15,7 +15,7 @@ wget --http-user=$1 --http-password=$2 --load-cookies ~/.urs_cookies --save-cook
 wget --http-user=$1 --http-password=$2 --load-cookies ~/.urs_cookies --save-cookies ~/.urs_cookies --keep-session-cookies --no-check-certificate --auth-no-challenge=on -r --reject "index.html*" -np -e robots=off -nd https://n5eil01u.ecs.nsidc.org/SNOWEX/WUS_UCLA_SR.001/2020.10.01/WUS_UCLA_SR_v01_N47_0W110_0_agg_16_WY2020_21_SWE_SCA_POST.nc.xml
 
 # Reanalysis for Moise N/Sleeping Woman -----------------------------------------------------------------------------------------
-# get WY 2020
+# get WY 2021
 wget --http-user=$1 --http-password=$2 --load-cookies ~/.urs_cookies --save-cookies ~/.urs_cookies --keep-session-cookies --no-check-certificate --auth-no-challenge=on -r --reject "index.html*" -np -e robots=off -nd https://n5eil01u.ecs.nsidc.org/SNOWEX/WUS_UCLA_SR.001/2020.10.01/WUS_UCLA_SR_v01_N47_0W115_0_agg_16_WY2020_21_SWE_SCA_POST.nc
 wget --http-user=$1 --http-password=$2 --load-cookies ~/.urs_cookies --save-cookies ~/.urs_cookies --keep-session-cookies --no-check-certificate --auth-no-challenge=on -r --reject "index.html*" -np -e robots=off -nd https://n5eil01u.ecs.nsidc.org/SNOWEX/WUS_UCLA_SR.001/2020.10.01/WUS_UCLA_SR_v01_N47_0W115_0_agg_16_WY2020_21_SWE_SCA_POST.nc.xml
 
