@@ -1,11 +1,13 @@
 # Data Directory README:
+Most files for the analysis are provided in the necessary folders. The only data that is not included due to space on GitHub in the UCLA SWE reanalyis
 ## Directory for the data directory
-1. `/crns`
-2. `/mesonet`
-3. `/snow`
-    -  `/snotel`
-    - `/ucla_swe`
-4. `/processed`
+1. RAW DATA
+    1. `/crns`
+    2. `/mesonet`
+    3. `/snow`
+        -  `/snotel`
+        - `/ucla_swe`
+2. ANALYSIS
 
 ### `/crns`
 This directory contains the Cosmic Ray Neutron Sensor (CRNS) data for 11-22-2020 to 5-2021 at our CARC site in Montana. The .txt file is provided. From Sam Tuttle. This data will eventually be published to the NSIDC.
