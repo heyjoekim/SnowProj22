@@ -11,4 +11,4 @@ dependencies:
 - matplotlib=3.5.2
 - scikit-learn=1.1.1
 - seaborn=0.11.2
-- statsmodel=0.13.2
+- statsmodels=0.13.2
