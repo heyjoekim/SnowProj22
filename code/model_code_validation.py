@@ -158,7 +158,7 @@ mda21_features['H [gm3]'] = calcH(mda21_features['Air Temp [degC]'], mda21_featu
 mda21_features2 = mda21_features.drop(['Air Temp [degC]', 'RH [%]'], axis=1)
 mda21_features = mda21_features.drop('H [gm3]', axis=1)
 
-mda21_features.columns = X_test1.columns
+# mda21_features.columns = X_test1.columns
 mda21_features2.columns = X_test2.columns
 # N1 = RF1.predict(mda21_features)
 N2 = RF2.predict(mda21_features2)
