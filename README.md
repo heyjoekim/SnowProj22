@@ -15,11 +15,30 @@ Alternatively, you can download the zipped file. After that, change into the rep
 cd SnowProj22
 chmod +x run_snowproj.sh
 ```
-After that the code should run without any errors. The following script will create a new conda environment called `snow` which will use all the versions of the python packages that this analysis used. It will also complete all of the analysis.
+
+#### Windows:
+These instructions are based off of my testing as of 12/14/2022. Some additional dependecies may be needed. Opening Anaconda Powershell Prompt, we may need to download:
 ```
-source run_snowproj.sh <os> <uid> <password>
+conda install git
+conda install wget
 ```
-The `<uid>` and `<password>` are the username and password for NASA Earthdata Login. Delete these and add your username and password to be able to download the files. For `<os>`: Enter your os. Important for windows system.
+Then we would need to create our python environment using the lines of code below:
+```
+conda env create --name snow --file myenv.yml
+```
+
+NOTE: Do not activate the environment at this time. Simply run the shell script
+```
+sh .\run_snowproj_win.sh <uid> <password>
+```
+The `<uid>` and `<password>` are the username and password for NASA Earthdata Login. Delete these and add your username and password to be able to download the files.
+
+#### Mac OS/Linux
+The following shell script should be used to run the analysis for this repository. The following script will create a new conda environment called `snow` which will use all the versions of the python packages that this analysis used. It will also complete all of the analysis.
+```
+source run_snowproj.sh <uid> <password>
+```
+Again, like above `<uid>` and `<password>` are the username and password for NASA Earthdata Login. Delete these and add your username and password to be able to download the files.
   
 ## 2. Data and Methods
 ### 2.1 Data Sources
