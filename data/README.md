@@ -8,6 +8,7 @@ Most files for the analysis are provided in the necessary folders. The only data
         -  `/snotel`
         - `/ucla_swe`
 2. ANALYSIS
+3. MODEL OUTPUTS
 
 ### `/crns`
 This directory contains the Cosmic Ray Neutron Sensor (CRNS) data for 11-22-2020 to 5-2021 at our CARC site in Montana. The .txt file is provided. From Sam Tuttle. This data will eventually be published to the NSIDC.
