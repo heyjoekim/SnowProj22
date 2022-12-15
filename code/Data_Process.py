@@ -243,6 +243,6 @@ SW_re_21 = SW_re_21.iloc[0:244]
 # save df
 fpath = Path('./data/analysis/swe/re_sw21.csv')
 fpath.parent.mkdir(parents=True, exist_ok=True)
-SW_re_21.to_csv(fpath, index=Trues)
+SW_re_21.to_csv(fpath, index=True)
 print('Finished Snow Reanalysis Processing')
 # ----------------------------------------------------------------------------------------
