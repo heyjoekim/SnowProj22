@@ -41,7 +41,7 @@ ax[0].set_title('A) RF Regression Results', loc='left')
 ax[1].set_title('B) RF Regression Residuals (OBS-PRED)', loc='left')
 plt.tight_layout()
 plt.savefig('./figures/rf_results.png', bbox_inches='tight', facecolor='w')
-plt.show()
+#plt.show()
 # ----------------------------------------------------------------------------------------------
 
 # PDP Plots
@@ -74,7 +74,7 @@ ax.tick_params(axis='y', color='tab:blue', labelcolor='tab:blue')
 ax1.spines['right'].set_color('red')
 ax1.tick_params(axis='y',color='red', labelcolor='red')
 plt.savefig('./figures/pdp_press.png', bbox_inches='tight', facecolor='w')
-plt.show()
+#plt.show()
 # -----------------------------------------------------------------------------------------
 
 # Figure 2: PDP plot with H -------------------------------------------------------------
@@ -106,7 +106,7 @@ ax.tick_params(axis='y', color='tab:blue', labelcolor='tab:blue')
 ax1.spines['right'].set_color('red')
 ax1.tick_params(axis='y',color='red', labelcolor='red')
 plt.savefig('./figures/pdp_humid.png', bbox_inches='tight', facecolor='w')
-plt.show()
+#plt.show()
 # -----------------------------------------------------------------------------------------
 
 # Results -----------------------------------------------------------------------------------
@@ -130,7 +130,7 @@ ax[0].legend(loc='lower right', frameon=False)
 ax[1].legend(frameon=False)
 plt.tight_layout()
 plt.savefig('./figures/carc_swe_results.png', bbox_inches='tight', facecolor='w')
-plt.show()
+#plt.show()
 # --------------------------------------------------------------------------------
 
 # Results -----------------------------------------------------------------------------------
@@ -151,4 +151,4 @@ ax[0].legend(loc='lower right', frameon=False)
 ax[1].legend(frameon=False)
 plt.tight_layout()
 plt.savefig('./figures/sw_swe_results.png', bbox_inches='tight', facecolor='w')
-plt.show()
+#plt.show()
